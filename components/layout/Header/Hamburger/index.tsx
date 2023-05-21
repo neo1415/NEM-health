@@ -6,7 +6,7 @@ type Props = {
 }
 
 const Hamburger: React.FC<Props> = ({ active }) => {
-  const classes = useStyles({ active });
+  const classes = useStyles();
 
   return (
     <svg
@@ -17,23 +17,23 @@ const Hamburger: React.FC<Props> = ({ active }) => {
       height="30"
     >
       <line
-        className={classes.line1}
+        className={`${classes.line1} ${active ? classes.active : ''}`}
         x2="30"
       />
       <line
-        className={classes.line2}
+        className={`${classes.line2} ${active ? classes.active : ''}`}
         y1="12"
         x2="30"
         y2="12"
       />
       <line
-        className={classes.line3}
+        className={`${classes.line3} ${active ? classes.active : ''}`}
         y1="12"
         x2="30"
         y2="12"
       />
       <line
-        className={classes.line4}
+        className={`${classes.line4} ${active ? classes.active : ''}`}
         y1="24"
         x2="30"
         y2="24"

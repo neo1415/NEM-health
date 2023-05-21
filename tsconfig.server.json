@@ -1,11 +1,13 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "commonJS",
+    "module": "commonjs",
     "outDir": "dist",
     "esModuleInterop": true,
-    "noEmit": false,
+    "noEmit": true,
     "jsx": "react",
+    "noEmitOnError": false,
+    "skipLibCheck": true
 
   },
   

@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 
 const { publicRuntimeConfig: { SERVER_URL } } = getConfig();
 
-const defaultDescription = 'Boilerplate for combining Payload CMS and NextJS into a single Node server';
-const defaultTitle = 'Payload CMS + NextJS Custom Server';
-const titleSuffix = ' | Payload CMS';
+const defaultDescription = 'Best HMO for best health plans for your convenience';
+const defaultTitle = 'NEM Health PLC';
+const titleSuffix = ' | NEM Health';
 const defaultOGImage = `${SERVER_URL}/images/og-image.jpg`;
-const defaultKeywords = 'NextJS, Payload CMS, boilerplate';
+const defaultKeywords = 'NEM Health, hmo, NEM, health plans';
 
 type Props = {
   title?: string,

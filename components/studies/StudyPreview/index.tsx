@@ -20,7 +20,7 @@ const templates = {
 
 const StudyPreview: React.FC<Props> = ({ template, study, first, last }) => {
   const Template = templates[template];
-  const classes = useStyles({ first, last });
+  const classes = useStyles({ first, last});
 
   return (
     <div className={classes.preview}>

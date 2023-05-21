@@ -7,6 +7,7 @@ import GridContainer from '../../components/layout/GridContainer';
 import RichText from '../../components/RichText';
 import BackgroundColor from '../../components/layout/BackgroundColor';
 import Gutter from '../../components/layout/Gutter';
+import PriceTable from '../../pages/PriceTable';
 
 const colStyles = {
   oneThird: {
@@ -67,6 +68,7 @@ const Content: React.FC<Type> = ({
             </GridContainer>
           </Padding>
         </BackgroundColor>
+     
       </Gutter>
     </div>
   );

@@ -10,6 +10,7 @@ import { TransitionGroup, CSSTransition, SwitchTransition } from 'react-transiti
 import { GridContainerWidthProvider } from '../components/layout/GridContainer';
 import Header from '../components/layout/Header';
 import useStyles from '../css/app';
+// import '../css/scss';
 import zIndex from '../css/zIndex';
 import breakpoints from '../css/breakpoints';
 import { base } from '../css/base';
@@ -65,15 +66,14 @@ const MyApp = (appProps: AppProps): React.ReactElement => {
   return (
     <ScrollInfoProvider>
       <WindowInfoProvider
-              breakpoints={{
-                xs: `(max-width: ${breakpoints.xs}px)`,
-                s: `(max-width: ${breakpoints.s}px)`,
-                m: `(max-width: ${breakpoints.m}px)`,
-                l: `(max-width: ${breakpoints.l}px)`,
-                xl: `(max-width: ${breakpoints.xl}px)`,
-              }}
+        breakpoints={{
+          xs: `(max-width: ${breakpoints.xs}px)`,
+          s: `(max-width: ${breakpoints.s}px)`,
+          m: `(max-width: ${breakpoints.m}px)`,
+          l: `(max-width: ${breakpoints.l}px)`,
+          xl: `(max-width: ${breakpoints.xl}px)`,
+        }}
       >
-        
         <ModalProvider
           zIndex={zIndex.modal}
           classPrefix="payload"

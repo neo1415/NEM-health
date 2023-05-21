@@ -31,7 +31,7 @@ export default createUseStyles({
     height: base(1.5),
     display: 'block',
   },
-  menuButton: ({ menuActive }) => ({
+  menuButton: {
     pointerEvents: 'all',
     background: colors.gray,
     transition: 'all 200ms linear',
@@ -42,7 +42,6 @@ export default createUseStyles({
     justifyContent: 'center',
     borderRadius: '100%',
     border: 0,
-    boxShadow: `inset 0 0 0 ${strokeWidth} ${menuActive ? colors.antique : colors.gray}`,
     cursor: 'pointer',
     '&:focus': {
       outline: 'none',
@@ -52,7 +51,13 @@ export default createUseStyles({
       outline: 'none',
       background: color(colors.gray).lighten(1.2).hex(),
     },
-  }),
+  },
+  menuButtonActive: {
+    boxShadow: `inset 0 0 0 ${strokeWidth} ${colors.antique}`,
+  },
+  menuButtonInactive: {
+    boxShadow: `inset 0 0 0 ${strokeWidth} ${colors.gray}`,
+  },
   menu: {
     background: colors.gray,
     position: 'relative',
@@ -69,6 +74,7 @@ export default createUseStyles({
       padding: `${headerHeight} ${base(1.5)} 0`,
     },
   },
+
   navLinks: {
     [queries.m]: {
       position: 'relative',

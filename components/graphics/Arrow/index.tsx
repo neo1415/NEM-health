@@ -3,7 +3,7 @@ import useStyles from './css';
 import { Color } from '../../../css/colors';
 
 const Arrow: React.FC<{ color?: Color, className?: string }> = ({ color = 'gray', className }) => {
-  const classes = useStyles({ color });
+  const classes = useStyles(  );
 
   return (
     <svg
@@ -19,7 +19,7 @@ const Arrow: React.FC<{ color?: Color, className?: string }> = ({ color = 'gray'
         strokeWidth="2"
         strokeMiterlimit="16"
         strokeLinecap="square"
-        className={classes.path}
+        // className={classes.path}
       />
     </svg>
   );

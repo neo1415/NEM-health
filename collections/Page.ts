@@ -3,6 +3,7 @@ import { Type as MediaType } from './Media';
 import slug from '../fields/slug';
 import meta, { Type as MetaType } from '../fields/meta';
 import { Content, Type as ContentType } from '../blocks/Content';
+import { Price, Type as PriceType } from '../blocks/PriceBlock';
 import { Image, Type as ImageBlockType } from '../blocks/Image';
 import Statistics, { Type as StatisticsType } from '../blocks/Statistics';
 import Spacer, { Type as SpacerType } from '../blocks/Spacer';
@@ -19,14 +20,20 @@ import StudySlider, { Type as StudySliderType } from '../blocks/StudySlider';
 import CTAGrid, { Type as CTAGridType } from '../blocks/CTAGrid';
 import RedHeadline from '../components/RichText/leaves/RedHeadline';
 import RedUnderline from '../components/RichText/leaves/RedUnderline';
+import { FormBlock } from '../blocks/Form';
+
+
 
 export type Layout =
 CallToActionType
 | ContentType
+| PriceType
+// | FormBlockType
 | CTAGridType
 | ImageBlockType
 | ImageCollageType
 | ImageContentCollageType
+| ImageGridType
 | ImageGridType
 | AltGridType
 | LogoGridType
@@ -119,7 +126,9 @@ export const Page: CollectionConfig = {
       blocks: [
         CallToAction,
         Content,
+        Price,
         CTAGrid,
+        FormBlock,
         Image,
         ImageCollage,
         ImageContentCollage,

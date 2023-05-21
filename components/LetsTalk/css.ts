@@ -18,7 +18,7 @@ export default createUseStyles({
     height: base(20),
     overflow: 'hidden',
   },
-  graphic: ({ isHovered }) => ({
+  graphic: ( isHovered ) => ({
     position: 'absolute',
     zIndex: 1,
     top: 0,
@@ -49,7 +49,7 @@ export default createUseStyles({
     color: colors.antique,
     textDecoration: 'none',
   },
-  arrow: ({ isHovered }) => ({
+  arrow: ( isHovered ) => ({
     transform: isHovered ? 'rotate(-45deg) translate3d(25%, 0, 0)' : 'rotate(-45deg)',
     opacity: isHovered ? 1 : 0.125,
     transition: `all ${transitions.default}ms linear`,

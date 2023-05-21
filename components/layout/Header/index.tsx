@@ -16,7 +16,7 @@ const menuSlug = 'menu';
 const Header: React.FC<Props> = ({ megaMenu, socialMedia }) => {
   const { isModalOpen, toggleModal } = useModal();
   const menuActive = isModalOpen(menuSlug);
-  const classes = useStyles({ menuActive });
+  const classes = useStyles();
   return (
     <header className={classes.header}>
       <NextLink
@@ -29,7 +29,7 @@ const Header: React.FC<Props> = ({ megaMenu, socialMedia }) => {
       </NextLink>
       <button
         type="button"
-        className={classes.menuButton}
+        className={`${classes.menuButton} ${menuActive ? classes.menuButtonActive : classes.menuButtonInactive}`}
         onClick={() => toggleModal(menuSlug)}
       >
         <Hamburger active={menuActive} />

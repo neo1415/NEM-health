@@ -1,7 +1,7 @@
 import { CollectionConfig } from 'payload/types';
 
 const FormSubmission: CollectionConfig = {
-  slug: 'form-submissions',
+  slug: 'form-submission',
   access: {
     create: () => true,
   },
@@ -22,6 +22,33 @@ const FormSubmission: CollectionConfig = {
         readOnly: true,
       },
     },
+
+    {
+      type: 'text',
+      name: 'name',
+      label: 'name',
+      admin: {
+        readOnly: true,
+      },
+    },
+
+    {
+      type: 'text',
+      name: 'income',
+      label: 'income',
+      admin: {
+        readOnly: true,
+      },
+    },
+
+    //     {
+    //   type: 'date',
+    //   name: 'name',
+    //   label: 'name',
+    //   admin: {
+    //     readOnly: true,
+    //   },
+    // },
     {
       type: 'textarea',
       name: 'message',

@@ -1,4 +1,5 @@
 import Content from './Content/Component';
+import Price from './PriceBlock/Component';
 import Spacer from './Spacer/Component';
 import Statistics from './Statistics/Component';
 import Image from './Image/Component';
@@ -13,14 +14,17 @@ import ImageCollage from './ImageCollage/Component';
 import ImageStatCollage from './ImageStatCollage/Component';
 import CTAGrid from './CTAGrid/Component';
 import LogoGrid from './LogoGrid/Component';
+import { FormBlock } from './Form/index';
 
 export const components = {
   'call-to-action': CallToAction,
   'cta-grid': CTAGrid,
   content: Content,
+  price:Price,
   spacer: Spacer,
   statistics: Statistics,
   image: Image,
+  'form-Block': FormBlock,
   'Image-collage': ImageCollage,
   'Image-content-collage': ImageContentCollage,
   'Image-grid': ImageGrid,

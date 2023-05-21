@@ -13,6 +13,7 @@ import Media from '../../components/Media';
 import mediaProps from './mediaProps';
 import Link from '../../components/Link';
 import Button from '../../components/Button';
+import PriceTable from './../../pages/PriceTable/index';
 
 const AltGrid: React.FC<Type> = ({
   backgroundColor,
@@ -109,11 +110,12 @@ const AltGrid: React.FC<Type> = ({
                 </Cell>
               );
             })}
-
+                  
              
           {/* </Grid>
         </GridContainer> */}
       </div>
+
     </div>
   );
 };

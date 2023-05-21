@@ -13,7 +13,7 @@ const Email: React.FC = () => {
     validate: validateEmail,
   });
 
-  const classes = useStyles({ showError });
+  const classes = useStyles(  );
 
   return (
     <div className={classes.wrap}>
@@ -25,6 +25,7 @@ const Email: React.FC = () => {
         onChange={(e) => setValue(e.target.value)}
         value={value as string || ''}
       />
+      
       <button
         type="submit"
         disabled={processing}

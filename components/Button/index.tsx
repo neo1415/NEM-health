@@ -11,7 +11,7 @@ type Props = {
 }
 
 const Button: React.FC<Props> = ({ label, color = 'antique', css }) => {
-  const classes = useStyles({ css });
+  const classes = useStyles(css );
 
   return (
     <button

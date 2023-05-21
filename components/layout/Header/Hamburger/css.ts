@@ -17,20 +17,24 @@ export default createUseStyles({
     width: base(),
     height: base(),
   },
-  line1: ({ active }) => generateLineStyles({
-    opacity: active ? 0 : undefined,
-    transform: active ? `translate(0, ${base(-0.5)})` : undefined,
-  }),
-  line2: ({ active }) => generateLineStyles({
+  line1: generateLineStyles({
     opacity: 1,
-    transform: active ? 'rotate(45deg)' : undefined,
+    transform: undefined,
   }),
-  line3: ({ active }) => generateLineStyles({
-    opacity: active ? 1 : 0,
-    transform: active ? 'rotate(-45deg)' : undefined,
+  line2: generateLineStyles({
+    opacity: 1,
+    transform: undefined,
   }),
-  line4: ({ active }) => generateLineStyles({
-    opacity: active ? 0 : undefined,
-    transform: active ? `translate(0, ${base(0.5)})` : undefined,
+  line3: generateLineStyles({
+    opacity: 1,
+    transform: undefined,
   }),
+  line4: generateLineStyles({
+    opacity: 1,
+    transform: undefined,
+  }),
+  active: {
+    opacity: 0,
+    transform: `translate(0, ${base(-0.5)})`,
+  },
 });

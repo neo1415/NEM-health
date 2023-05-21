@@ -4,6 +4,7 @@ import meta, { Type as MetaType } from '../fields/meta';
 import { Type as MediaType } from './Media';
 import { Type as CategoryType } from './Category';
 import { Content, Type as ContentType } from '../blocks/Content';
+import { Price, Type as PriceType } from '../blocks/PriceBlock';
 import { Image, Type as ImageType } from '../blocks/Image';
 import Statistics, { Type as StatisticsType } from '../blocks/Statistics';
 import Spacer, { Type as SpacerType } from '../blocks/Spacer';
@@ -22,6 +23,7 @@ import CTAGrid, { Type as CTAGridType } from '../blocks/CTAGrid';
 export type Layout =
   CallToActionType
   | ContentType
+  | PriceType
   | CTAGridType
   | ImageType
   | ImageCollageType
@@ -79,6 +81,7 @@ const Study: CollectionConfig = {
       blocks: [
         CallToAction,
         Content,
+        Price,
         CTAGrid,
         Image,
         ImageCollage,

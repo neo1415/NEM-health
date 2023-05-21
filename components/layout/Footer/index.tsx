@@ -8,6 +8,7 @@ import Link from '../../Link';
 import LetsTalk from '../../LetsTalk';
 import useStyles from './css';
 import Arrow from '../../graphics/Arrow';
+import PriceTable from '../../../pages/PriceTable';
 
 type Props = {
   footer: FooterType
@@ -22,7 +23,8 @@ const Footer: React.FC<Props> = ({ footer, socialMedia }) => {
   }, []);
 
   return (
-    <footer className={classes.footer}>
+    <div>
+          <footer className={classes.footer}>
       <Gutter
         right
         className={classes.bgWrap}
@@ -135,6 +137,9 @@ const Footer: React.FC<Props> = ({ footer, socialMedia }) => {
         <Arrow className={classes.backToTopArrow} />
       </button>
     </footer>
+    {/* <PriceTable /> */}
+    </div>
+
   );
 };
 
