@@ -22,7 +22,7 @@ import transitions from '../css/transitions';
 import 'react-toastify/dist/ReactToastify.css';
 
 type AppProps = {
-  pageProps: unknown
+  pageProps: object
   Component: React.FC<{ footer: FooterType, socialMedia: SocialMediaType }>
 } & {
   megaMenu: MegaMenuType
@@ -110,7 +110,7 @@ const MyApp = (appProps: AppProps): React.ReactElement => {
                   exit
                   appear
                 >
-                  <SwitchTransition type="out-in">
+                  <SwitchTransition mode="out-in">
                     <CSSTransition
                       key={`${router.pathname}${JSON.stringify(router.query)}`}
                       timeout={transitions.page}

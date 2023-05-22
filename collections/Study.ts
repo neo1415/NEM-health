@@ -19,6 +19,7 @@ import LogoGrid, { Type as LogoGridType } from '../blocks/LogoGrid';
 import ImageCollage, { Type as ImageCollageType } from '../blocks/ImageCollage';
 import StudySlider, { Type as StudySliderType } from '../blocks/StudySlider';
 import CTAGrid, { Type as CTAGridType } from '../blocks/CTAGrid';
+import { FormBlock } from '../blocks/Form';
 
 export type Layout =
   CallToActionType
@@ -41,7 +42,7 @@ export type Layout =
 export type Type = {
   title?: string
   featuredImage: MediaType
-  previewImages: {
+  previewMedia: {
     image: MediaType
   }[]
   client?: string
@@ -84,6 +85,7 @@ const Study: CollectionConfig = {
         Price,
         CTAGrid,
         Image,
+        FormBlock,
         ImageCollage,
         ImageContentCollage,
         ImageGrid,

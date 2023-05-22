@@ -17,6 +17,14 @@ const start = async () => {
     secret: process.env.PAYLOAD_SECRET_KEY,
     mongoURL: process.env.MONGO_URL,
     express: server,
+    email: {
+      fromName: 'Admin',
+      fromAddress: 'admin@example.com',
+      logMockCredentials: true,
+    },
+    onInit: () => {
+      payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`);
+    },
   });
 
   if (!process.env.NEXT_BUILD) {

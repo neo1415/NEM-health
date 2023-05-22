@@ -39,7 +39,7 @@ const StudyPreviewOne: React.FC<StudyType> = (props) => {
         </Cell>
       </Grid>
       <Grid>
-        {previewMedia?.[0]?.media && (
+        {previewMedia?.[0]?.image && (
           <Cell
             cols={7}
             colsM={4}
@@ -48,12 +48,12 @@ const StudyPreviewOne: React.FC<StudyType> = (props) => {
             <Parallax yDistance={100}>
               <Media
                 preferredSize="portrait"
-                {...previewMedia[0].media}
+                {...previewMedia[0].image}
               />
             </Parallax>
           </Cell>
         )}
-        {previewMedia?.[1]?.media && (
+        {previewMedia?.[1]?.image && (
           <Cell
             cols={5}
             colsM={4}
@@ -62,7 +62,7 @@ const StudyPreviewOne: React.FC<StudyType> = (props) => {
             <Parallax yDistance={50}>
               <Media
                 preferredSize="portrait"
-                {...previewMedia[1].media}
+                {...previewMedia[1].image}
               />
             </Parallax>
           </Cell>

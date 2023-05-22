@@ -9,13 +9,13 @@ const serialize = (children: any): React.ReactElement[] => children.map((node, i
   if (Text.isText(node)) {
     let text = <span dangerouslySetInnerHTML={{ __html: escapeHTML(node.text) }} />;
 
-    if (node.bold) {
-      text = (
-        <strong key={i}>
-          {text}
-        </strong>
-      );
-    }
+    // if (node.bold) {
+    //   text = (
+    //     <strong key={i}>
+    //       {text}
+    //     </strong>
+    //   );
+    // }
 
     if (node['red-headline']) {
       text = (
@@ -33,43 +33,43 @@ const serialize = (children: any): React.ReactElement[] => children.map((node, i
       );
     }
 
-    if (node.code) {
-      text = (
-        <code key={i}>
-          {text}
-        </code>
-      );
-    }
+    // if (node.code) {
+    //   text = (
+    //     <code key={i}>
+    //       {text}
+    //     </code>
+    //   );
+    // }
 
-    if (node.italic) {
-      text = (
-        <em key={i}>
-          {text}
-        </em>
-      );
-    }
+    // if (node.italic) {
+    //   text = (
+    //     <em key={i}>
+    //       {text}
+    //     </em>
+    //   );
+    // }
 
-    if (node.underline) {
-      text = (
-        <span
-          style={{ textDecoration: 'underline' }}
-          key={i}
-        >
-          {text}
-        </span>
-      );
-    }
+    // if (node.underline) {
+    //   text = (
+    //     <span
+    //       style={{ textDecoration: 'underline' }}
+    //       key={i}
+    //     >
+    //       {text}
+    //     </span>
+    //   );
+    // }
 
-    if (node.strikethrough) {
-      text = (
-        <span
-          style={{ textDecoration: 'line-through' }}
-          key={i}
-        >
-          { text}
-        </span>
-      );
-    }
+    // if (node.strikethrough) {
+    //   text = (
+    //     <span
+    //       style={{ textDecoration: 'line-through' }}
+    //       key={i}
+    //     >
+    //       { text}
+    //     </span>
+    //   );
+    // }
 
     return (
       <Fragment key={i}>

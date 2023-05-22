@@ -40,9 +40,9 @@ export default createUseStyles({
   },
 
   table: {
-    borderRadius: '5px',
     width: '100%',
     height: '100%',
+    borderRadius:'15px',
     border: 'none',
     borderSpacing: 0,
     font: '400 1.4rem "Open Sans", sans-serif',
@@ -60,6 +60,7 @@ export default createUseStyles({
     },
     th: {
       background: 'black',
+      borderRadius:'15px',
       font: '600 1.4rem "Open Sans", sans-serif',
     },
   },
@@ -68,49 +69,126 @@ export default createUseStyles({
     position: 'relative',
     margin: '3% auto 0',
     width: '85%',
-    border: '1px solid brown',   
-    height: '493rem',
+    // border: '1px solid brown',   
+    // height: '493rem',
     borderRadius:'15px',
     perspective: '10000',
     transformStyle: 'preserve-3d',
-    minWidth: '950px',
+    // minWidth: '950px',
     overflow: 'visible',
     transition: 'width 0.2s height 0.2s',
   },
-
-  front: {
-    position: 'absolute',
+  secondContainer: {
+    // maxHeight: 0,
+    overflow: 'hidden',
+    transition: 'max-height 0.3s ease',
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100%',
+    width: '103.3%',
+    backfaceVisibility: 'hidden',
+    transformStyle: 'preserve-3d',
+    transformOrigin: '50% 50%',
+    background: 'gray',
+    borderRadius:'15px',
+    '& table': {
+      // ...table styles
+    },
+  },
+  
+  thirdContainer: {
+    // maxHeight: 0,
+    overflow: 'hidden',
+    transition: 'max-height 0.3s ease',
+    top: 0,
+    left: 0,
+    width: '103.3%',
+    backfaceVisibility: 'hidden',
+    transformStyle: 'preserve-3d',
+    transformOrigin: '50% 50%',
+    background: 'gray',
+    borderRadius:'15px',
+    '& table': {
+      // ...table styles
+    },
+  },
+
+  showPart: {
+    display: 'block',
+  },
+
+  activeContainer: {
+    display: 'block',
+  },
+
+  unactive:{
+    display:"none",
+  },
+  
+  seeMoreButton: {
+    // ...button styles
+    display:'flex',
+    justifySelf:'center',
+    alignItems:'center',
+    justifyContent:'center',
+    width:'100%',
+    color:'brown',
+    padding:'1rem',
+    fontSize:'1.1rem',
+    fontWeight:'bold',
+    cursor:'pointer',
+    border:'none',
+    background:'white',
+    outline:'none',
+    '&:hover':{
+      color:'black',
+    }
+
+  },
+
+  front: {
+    // position: 'absolute',
+    top: 0,
+    left: 0,
+    // width: '103.3%',
     backfaceVisibility: 'hidden',
     transformStyle: 'preserve-3d',
     transition: 'transform 0.7s',
     transformOrigin: '50% 50%',
-    background: '#fff',
-    borderRadius: '5px',
+    background: 'gray',
+    borderRadius:'15px',
   },
   entypocheck:{
     color:'green',
     textAlign:'center',
-    paddingLeft:'.3rem',
-    paddingRight:'.3rem',
+    paddingLeft:'.7rem',
+    paddingRight:'.7rem',
     width:'13rem',
-    borderBottom:'1px solid brown',
-    borderRight:'1px solid brown',
+    // borderBottom:'1px solid brown',
+    // borderRight:'1px solid brown',
 
 
+  },
+  tables:{
+    // width:'67.5rem !important'
+    borderRadius:'15px',
   },
   entypocancel:{
     color:'green',
     textAlign:'center',
-    paddingLeft:'.3rem',
-    paddingRight:'.3rem',
+    paddingLeft:'.7rem',
+    paddingRight:'.7rem',
+    fontSize:'.9rem',
+  },
+
+  entypocancele:{
+    color:'white',
+    textAlign:'center',
+    paddingLeft:'1.1rem',
+    paddingRight:'1.1rem',
     fontSize:'.9rem',
 
-    borderBottom:'1px solid brown',
-    borderRight:'1px solid brown',
+    // borderBottom:'1px solid brown',
+    // borderRight:'1px solid brown',
 
   },
   back: {
@@ -159,11 +237,11 @@ export default createUseStyles({
       justifyContent:'center',
       alignItems:'center',
       
-      borderRight:'1px solid brown',
+      borderRight:'1px solid grey',
 
   },
   tr:{
-    borderBottom:'1px solid brown'
+    backgroundColor:'white',
   },
   thp:{
     paddingTop:'1rem',
@@ -180,7 +258,7 @@ export default createUseStyles({
     color: '#000',
     fontWeight: 'bold',
     background: 'white',
-    borderBottom: '2px solid #3ca02a',
+    // borderBottom: '2px solid #3ca02a',
     padding: '0px 7px',
     lineHeight: '1.8',
     

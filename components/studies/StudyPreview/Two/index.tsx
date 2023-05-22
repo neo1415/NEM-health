@@ -45,26 +45,26 @@ const StudyPreviewTwo: React.FC<StudyType> = (props) => {
         right
         className={classes.media}
       >
-        {previewMedia?.[0]?.media && (
+        {previewMedia?.[0]?.image && (
           <div
             className={classes.previewMediaOne}
           >
             <Parallax yDistance={100}>
               <Media
                 preferredSize="portrait"
-                {...previewMedia[0].media}
+                {...previewMedia[0].image}
               />
             </Parallax>
           </div>
         )}
-        {previewMedia?.[1]?.media && (
+        {previewMedia?.[1]?.image && (
           <div
             className={classes.previewMediaTwo}
           >
             <Parallax yDistance={50}>
               <Media
                 preferredSize="portrait"
-                {...previewMedia[1].media}
+                {...previewMedia[1].image}
               />
             </Parallax>
           </div>

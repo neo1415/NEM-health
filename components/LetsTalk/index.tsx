@@ -10,7 +10,7 @@ type Props = {
 
 const LetsTalk: React.FC<Props> = ({ className }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const classes = useStyles( isHovered );
+  const classes = useStyles( );
 
   return (
     <div className={[className, classes.wrap].filter(Boolean).join(' ')}>
