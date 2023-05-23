@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { GetStaticProps, GetStaticPaths } from 'next';
 import { Cell, Grid } from '@faceless-ui/css-grid';
 import Link from 'next/link';
 import Head from '../../components/Head';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import Template from '../../components/layout/Template';
 import useStyles from '../../css/pages/study';
 import { Type as FooterType } from '../../globals/Footer';
@@ -14,6 +14,7 @@ import RenderBlocks from '../../components/RenderBlocks';
 import Image from '../../components/Media';
 import Gutter from '../../components/layout/Gutter';
 import { AbsoluteNoise } from '../../components/Noise/AbsoluteNoise';
+import NotFound from '../../components/NotFound';
 
 export type Props = {
   study: StudyType
@@ -25,6 +26,10 @@ export type Props = {
 const Study: React.FC<Props> = (props) => {
   const { footer, socialMedia, study } = props;
   const classes = useStyles();
+
+  if (!study) {
+    return <NotFound />;
+  }
 
   return (
     <Template

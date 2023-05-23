@@ -40,7 +40,7 @@ export type Layout =
   | StudySliderType
 
 export type Type = {
-  title?: string
+  title: string
   featuredImage: MediaType
   previewMedia: {
     image: MediaType
@@ -49,7 +49,7 @@ export type Type = {
   location?: string
   categories?: CategoryType[]
   slug: string
-  meta?: MetaType
+  meta: MetaType
   layout: Layout[]
 }
 
