@@ -4,7 +4,7 @@ import Spacer from './Spacer/Component';
 import Statistics from './Statistics/Component';
 import Image from './Image/Component';
 import ImageContentCollage from './ImageContentCollage/Component';
-import StudySlider from './StudySlider/Component';
+// import StudySlider from './StudySlider/Component';
 import StickyContent from './StickyContent/Component';
 import Slider from './Slider/Component';
 import CallToAction from './CallToAction/Component';
@@ -31,7 +31,7 @@ export const components = {
   'Alt-grid': AltGrid,
   'Logo-grid': LogoGrid,
   'Image-stat-collage': ImageStatCollage,
-  'study-slider': StudySlider,
+  // 'study-slider': StudySlider,
   'sticky-content': StickyContent,
   slider: Slider,
 };
