@@ -7,11 +7,13 @@ import { Select } from "./Select";
 import { State } from './State';
 import { Text } from "./Text";
 import { Textarea } from "./Textarea";
+import {File} from "./File";
 
 export const fields = {
   checkbox: Checkbox,
   country: Country,
   email: Email,
+  file: File,
   message: Message,
   number: Number,
   select: Select,

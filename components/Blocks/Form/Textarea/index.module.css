@@ -1,0 +1,52 @@
+@use "../shared.scss";
+.wrap {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.textarea {
+  height: unset;
+}
+
+.textarea .formInput {
+  all: unset;
+  box-sizing: border-box;
+  font-family: system-ui;
+  width: 100%;
+  border: 1px solid black;
+  background: white;
+  color: black;
+  font-size: 1rem;
+  height: calc(24px * 2.5);
+  line-height: 24px;
+  padding: calc(24px * 0.75);
+}
+
+.textarea .formInput::-moz-placeholder, .textarea .formInput::-webkit-input-placeholder {
+  color: #c4c4c4;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.textarea .formInput:hover {
+  border-color: #c4c4c4;
+}
+
+.textarea .formInput:focus, .textarea .formInput:active {
+  border-color: #d4d4d4;
+  outline: 0;
+}
+
+.textarea .formInput:disabled {
+  background: #f4f4f4;
+  color: #d4d4d4;
+}
+
+.textarea .formInput:disabled:hover {
+  border-color: #f4f4f4;
+}
+
+.label {
+  margin-bottom: 10px;
+  display: block;
+}

@@ -1,13 +1,90 @@
 @use "../shared.scss";
 
+// :root {
+//   --color-red: rgb(255,0,0);
+//   --color-green: rgb(178, 255, 214);
+//   --color-white: rgb(255, 255, 255);
+//   --color-dark-gray: rgb(51,52,52);
+//   --color-mid-gray: rgb(196,196,196);
+//   --color-gray: rgb(212,212,212);
+//   --color-light-gray: rgb(244,244,244);
+//   --color-black: rgb(0, 0, 0);
+//   --breakpoint-xs-width : #{$breakpoint-xs-width};
+//   --breakpoint-s-width : #{$breakpoint-s-width};
+//   --breakpoint-m-width : #{$breakpoint-m-width};
+//   --breakpoint-l-width : #{$breakpoint-l-width};
+//   --scrollbar-width: 17px;
+
+//   --base: 24px;
+//   --font-body: system-ui;
+//   --font-mono: 'Roboto Mono', monospace;
+
+//   --gutter-h: 180px;
+//   --block-padding: 120px;
+
+//   --header-z-index: 100;
+//   --modal-z-index: 90;
+
+//   @include large-break {
+//     --gutter-h: 144px;
+//     --block-padding: 96px;
+//   }
+
+//   @include mid-break {
+//     --gutter-h: 24px;
+//     --block-padding: 60px;
+//   }
+// }
+
+
 .wrap {
   position: relative;
-  margin-bottom: var(--base);
+  margin-bottom: 24px;
 }
 
 .input {
-  @include shared.formInput;
+  .formInput{
+    all: unset;
+    // -webkit-appearance: none;
+    box-sizing: border-box;
+    font-family:  system-ui;
+    width: 100%;
+    border: 1px solid black;
+    background: white;
+    color: black;
+    font-size: 1rem;
+    height: calc(24px * 2.5);
+    line-height: 24px;
+    padding: calc(24px * 0.75);
+  
+    &::-moz-placeholder,
+    &::-webkit-input-placeholder {
+      color: rgb(196,196,196);
+      font-weight: normal;
+      font-size: 1rem;
+    }
+  
+    &:hover {
+      border-color: rgb(196,196,196);
+    }
+  
+    &:focus,
+    &:active {
+      border-color: rgb(212,212,212);
+      outline: 0;
+    }
+  
+    &:disabled {
+      background: rgb(244,244,244);
+      color: rgb(212,212,212);
+  
+      &:hover {
+        border-color: rgb(244,244,244);
+      }
+    }
+  }
 }
+
 
 .label {
   margin-bottom: 10px;

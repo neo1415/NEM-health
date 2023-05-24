@@ -1,8 +1,44 @@
 @use "../shared.scss";
+// :root {
+//   --color-red: rgb(255,0,0);
+//   --color-green: rgb(178, 255, 214);
+//   --color-white: rgb(255, 255, 255);
+//   --color-dark-gray: rgb(51,52,52);
+//   --color-mid-gray: rgb(196,196,196);
+//   --color-gray: rgb(212,212,212);
+//   --color-light-gray: rgb(244,244,244);
+//   --color-black: rgb(0, 0, 0);
+//   --breakpoint-xs-width : #{$breakpoint-xs-width};
+//   --breakpoint-s-width : #{$breakpoint-s-width};
+//   --breakpoint-m-width : #{$breakpoint-m-width};
+//   --breakpoint-l-width : #{$breakpoint-l-width};
+//   --scrollbar-width: 17px;
+
+//   --base: 24px;
+//   --font-body: system-ui;
+//   --font-mono: 'Roboto Mono', monospace;
+
+//   --gutter-h: 180px;
+//   --block-padding: 120px;
+
+//   --header-z-index: 100;
+//   --modal-z-index: 90;
+
+//   @include large-break {
+//     --gutter-h: 144px;
+//     --block-padding: 96px;
+//   }
+
+//   @include mid-break {
+//     --gutter-h: 24px;
+//     --block-padding: 60px;
+//   }
+// }
+
 
 .select {
   position: relative;
-  margin-bottom: var(--base);
+  margin-bottom: 24px;
 }
 
 .label {
@@ -11,16 +47,54 @@
 }
 
 .reactSelect {
-  display: flex;
+  // display: flex;
 
   :global {
     div.rs__control {
-      @include shared.formInput;
-      height: auto;
+      .formInput{
+        all: unset;
+        // -webkit-appearance: none;
+        box-sizing: border-box;
+        font-family:  system-ui;
+        width: 100%;
+        border: 1px solid black;
+        background: white;
+        color: black;
+        font-size: 1rem;
+        height: calc(24px * 2.5);
+        line-height: 24px;
+        padding: calc(24px * 0.75);
+      
+        &::-moz-placeholder,
+        &::-webkit-input-placeholder {
+          color: rgb(196,196,196);
+          font-weight: normal;
+          font-size: 1rem;
+        }
+      
+        &:hover {
+          border-color: rgb(196,196,196);
+        }
+      
+        &:focus,
+        &:active {
+          border-color: rgb(212,212,212);
+          outline: 0;
+        }
+      
+        &:disabled {
+          background: rgb(244,244,244);
+          color: rgb(212,212,212);
+      
+          &:hover {
+            border-color: rgb(244,244,244);
+          }
+        }
+      }
     }
 
     .rs__input-container {
-      color: var(--color-black);
+      color: black;
     }
 
     .rs__value-container {
@@ -34,13 +108,13 @@
     }
 
     .rs__single-value {
-      color: var(--color-black);
+      color: black;
     }
 
     .rs__indicators {
       position: absolute;
-      top: calc(var(--base) * 0.9);
-      right: calc(var(--base) * 0.9);
+      top: calc(24px * 0.4);
+      right: calc(24px * 0.9);
       .arrow {
         transform: rotate(90deg);
       }
@@ -51,12 +125,12 @@
       cursor: pointer;
 
       svg path {
-        fill: var(--color-dark-gray);
+        fill: rgb(51,52,52);
       }
 
       &:hover {
         svg path {
-          fill: var(--color-dark-gray);
+          fill: rgb(51,52,52);
         }
       }
     }
@@ -66,53 +140,53 @@
     }
 
     .rs__menu {
-      color: var(--color-black);
-      background-color: var(--color-white);
+      color: black;
+      background-color:white;
       z-index: 2;
       border-radius: 0;
-      box-shadow: 0 4px 11px hsl(0deg 0% 0% / 10%);
+      // box-shadow: 0 4px 11px hsl(0deg 0% 0% / 10%);
     }
 
     .rs__menu-list {
-      padding: calc(var(--base) / 4) 0;
+      padding: calc(24px / 4) 0;
     }
 
     .rs__group-heading {
-      margin-bottom: calc(var(--base) / 2);
+      margin-bottom: calc(24px / 2);
     }
 
     .rs__option {
       font-size: 1rem;
-      padding: calc(var(--base) / 2) var(--base);
+      padding: calc(24px / 2) 24px;
 
       &--is-focused {
-        background-color: var(--color-light-gray);
-        color: var(--color-black);
+        background-color:rgb(244,244,244);
+        color: black;
       }
 
       &--is-selected {
-        background-color: var(--color-light-gray);
-        color: var(--color-black);
+        background-color:rgb(244,244,244);
+        color: black;
       }
     }
 
     .rs__multi-value {
       padding: 0;
-      background: var(--color-light-gray);
+      background:rgb(244,244,244);
     }
 
     .rs__multi-value__label {
       max-width: 150px;
-      color: var(--color-black);
-      padding: calc(var(--base) / 8) calc(var(--base) / 4);
+      color: black;
+      padding: calc(24px / 8) calc(24px / 4);
     }
 
     .rs__multi-value__remove {
       cursor: pointer;
 
       &:hover {
-        color: var(--color-black);
-        background: var(--color-light-gray);
+        color: black;
+        background:rgb(244,244,244);
       }
     }
 

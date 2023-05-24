@@ -54,6 +54,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   const pageReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=${slug}`);
   const pageData = await pageReq.json();
+  console.log(slug)
 
   const page = pageData.docs && pageData.docs.length > 0 ? pageData.docs[0] : null;
 
@@ -67,6 +68,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const pageReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/pages?limit=100`);
   const pageData = await pageReq.json();
+  console.log(pageData)
 
   return {
     paths: pageData.docs.map(({ slug }) => ({

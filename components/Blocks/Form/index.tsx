@@ -66,10 +66,14 @@ export const FormBlock: React.FC<
       const submitForm = async () => {
         setError(undefined)
 
-        const dataToSend = Object.entries(data).map(([name, value]) => ({
-          field: name,
-          value,
-        }))
+        const dataToSend = {
+          submissionData: Object.entries(data).map(([name, value]) => ({
+            field: name,
+            value: name === 'file' ? value[0] : value,
+          })),
+        };
+      
+      
 
         // delay loading indicator by 1s
         loadingTimerID = setTimeout(() => {
@@ -77,7 +81,7 @@ export const FormBlock: React.FC<
         }, 1000)
 
         try {
-          const req = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/form-submissions`, {
+          const req = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/form-submissions`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

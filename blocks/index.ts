@@ -14,7 +14,7 @@ import ImageCollage from './ImageCollage/Component';
 import ImageStatCollage from './ImageStatCollage/Component';
 import CTAGrid from './CTAGrid/Component';
 import LogoGrid from './LogoGrid/Component';
-import { FormBlock } from './Form/index';
+import { FormBlock } from '../components/Blocks/Form';
 
 export const components = {
   'call-to-action': CallToAction,
@@ -24,7 +24,7 @@ export const components = {
   spacer: Spacer,
   statistics: Statistics,
   image: Image,
-  'form-Block': FormBlock,
+  'formBlock': FormBlock,
   'Image-collage': ImageCollage,
   'Image-content-collage': ImageContentCollage,
   'Image-grid': ImageGrid,

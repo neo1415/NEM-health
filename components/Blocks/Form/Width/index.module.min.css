@@ -1,0 +1,1 @@
+@use '../../../../scss/queries.scss' as *;.width{padding-left:calc(24px * 0.5);padding-right:calc(24px * 0.5)}

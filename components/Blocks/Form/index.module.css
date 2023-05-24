@@ -1,5 +1,4 @@
 @use '../.../../../../scss/queries.scss' as *;
-
 .form {
   display: flex;
   flex-direction: column;
@@ -9,27 +8,19 @@
   align-items: center;
   justify-content: center;
   height: 80vh;
-
-  // @include small-break {
-  //   height: 100%;
-  // }
 }
 
 .intro {
   margin-bottom: 24px;
-
-  // @include mid-break {
-  //   margin-bottom: 24px;
-  // }
 }
 
 .confirmationMessage {
   max-width: 800px;
   text-align: center;
+}
 
-  * {
-    margin: 0;
-  }
+.confirmationMessage * {
+  margin: 0;
 }
 
 .fieldWrap {
@@ -39,31 +30,18 @@
   flex-wrap: wrap;
   margin-left: calc(24px * -0.5);
   margin-right: calc(24px * -0.5);
-  width: calc(100% + #{24px});
-
-  >* {
-    width: 100%;
-  }
+  width: calc(100% + 24px);
 }
 
-.Select {
-  & label {
-    position: absolute;
-    top: calc(24px * -0.5);
-  }
+.fieldWrap > * {
+  width: 100%;
 }
 
-.sidebarContent {
-  // @include mid-break {
-  //   display: none;
-  // }
+.Select label {
+  position: absolute;
+  top: calc(24px * -0.5);
 }
 
 .mobileSidebar {
   display: none;
-
-  // @include mid-break {
-  //   display: block;
-  //   margin-bottom: calc(24px * 2);
-  // }
 }

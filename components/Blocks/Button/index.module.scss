@@ -1,4 +1,41 @@
-@import '../../../scss/type.scss';
+// @import '../../../scss//type.scss';
+
+// :root {
+//   --color-red: rgb(255,0,0);
+//   --color-green: rgb(178, 255, 214);
+//   --color-white: rgb(255, 255, 255);
+//   --color-dark-gray: rgb(51,52,52);
+//   --color-mid-gray: rgb(196,196,196);
+//   --color-gray: rgb(212,212,212);
+//   --color-light-gray: rgb(244,244,244);
+//   --color-black: rgb(0, 0, 0);
+//   --breakpoint-xs-width : #{$breakpoint-xs-width};
+//   --breakpoint-s-width : #{$breakpoint-s-width};
+//   --breakpoint-m-width : #{$breakpoint-m-width};
+//   --breakpoint-l-width : #{$breakpoint-l-width};
+//   --scrollbar-width: 17px;
+
+//   --base: 24px;
+//   --font-body: system-ui;
+//   --font-mono: 'Roboto Mono', monospace;
+
+//   --gutter-h: 180px;
+//   --block-padding: 120px;
+
+//   --header-z-index: 100;
+//   --modal-z-index: 90;
+
+//   @include large-break {
+//     --gutter-h: 144px;
+//     --block-padding: 96px;
+//   }
+
+//   @include mid-break {
+//     --gutter-h: 24px;
+//     --block-padding: 60px;
+//   }
+// }
+
 
 .content {
   display: flex;
@@ -6,14 +43,14 @@
   justify-content: center;
 
   svg {
-    margin-right: calc(var(--base) / 2);
-    width: var(--base);
-    height: var(--base);
+    margin-right: calc(24px / 2);
+    width: 24px;
+    height: 24px;
   }
 }
 
 .label {
-  @extend %label;
+  @extend %label !optional;
   display: flex;
   align-items: center;
 }
@@ -26,30 +63,30 @@
   position: relative;
   text-decoration: none;
   padding: 12px 18px;
-  margin-bottom: var(--base);
+  margin-bottom: 24px;
   align-items: center;
   justify-content: center;
 }
 
 .appearance--primary {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 
   &:hover, &:focus {
-    background-color: var(--color-white);
-    color: var(--color-black);
-    box-shadow: inset 0 0 0 1px var(--color-black);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
   }
 }
 
 .appearance--secondary {
-  background-color: var(--color-white);
-  box-shadow: inset 0 0 0 1px var(--color-black);
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
 
   &:hover, &:focus {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    box-shadow: inset 0 0 0 1px var(--color-black);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
   }
 }
 
