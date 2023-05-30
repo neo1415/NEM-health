@@ -8,6 +8,8 @@ module.exports = {
   images: {
     domains: [
       'localhost',
+      'https://nem-health.netlify.app/',
+
       // Your domain(s) here
     ],
     // deviceSizes: sizes,
