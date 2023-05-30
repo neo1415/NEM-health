@@ -50,7 +50,7 @@ const Page: React.FC<Props> = (props) => {
 export default Page;
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  const slug = ctx.params?.slug || "home";
+  const slug = ctx.params?.slug || 'home';
 
   const pageReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=${slug}`);
   const pageData = await pageReq.json();
