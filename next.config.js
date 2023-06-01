@@ -8,7 +8,7 @@ module.exports = {
   images: {
     domains: [
       'localhost',
-      'https://nem-health.netlify.app/',
+      'https://nem-health.up.railway.app',
 
       // Your domain(s) here
     ],
