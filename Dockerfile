@@ -1,18 +1,20 @@
-FROM node:18.8.0-alpine AS builder
+# Use an official Node.js runtime as the base image
+FROM node:14
 
-RUN mkdir -p /app
+# Set the working directory inside the container
 WORKDIR /app
 
-COPY package.json  .
-COPY yarn.lock .
+# Copy package.json and yarn.lock to the working directory
+COPY package.json yarn.lock ./
 
-RUN apk add git
+# Install application dependencies
+RUN yarn install --production
 
-RUN yarn install
-
+# Copy the rest of the application code
 COPY . .
 
-RUN yarn build
-
+# Expose the port that your application listens on
 EXPOSE 3000
-CMD [ "yarn", "run", "serve" ]
+
+# Define the command to start your application
+CMD ["yarn", "start"]
