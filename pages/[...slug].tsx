@@ -53,17 +53,9 @@ export default Page;
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const slug = ctx.params?.slug ? (ctx.params.slug as string[]).join('/') : 'home';
 
-  const pageQuery = await payload.find({
-    collection: 'pages',
-    where: {
-      slug: {
-        equals: slug,
-      },
-    },
-  });
-
-  if (!pageQuery.docs[0]) {
-    ctx.res.statusCode = 404;
+  const pageReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=${slug}`);
+  const pageData = await pageReq.json();
+  console.log(slug)
 
     return {
       props: {},
@@ -74,5 +66,18 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     props: {
       page: pageQuery.docs[0],
     },
+    revalidate: 1,
+  };
+};
+export const getStaticPaths: GetStaticPaths = async () => {
+  const pageReq = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/pages?limit=100`);
+  const pageData = await pageReq.json();
+  console.log(pageData)
+
+  return {
+    paths: pageData.docs.map(({ slug }) => ({
+      params: { slug: slug.split('/') },
+    })),
+    fallback: false,
   };
 };
