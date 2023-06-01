@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy package.json and yarn.lock
 COPY package.json yarn.lock ./
 
-# Install dependencies
-RUN yarn install --frozen-lockfile
+# Update lockfile
+RUN yarn install
 
 # Copy the rest of the application code
 COPY . .
@@ -27,7 +27,7 @@ COPY --from=builder /app/package.json /app/yarn.lock ./
 COPY --from=builder /app/.next ./.next
 
 # Install production dependencies
-RUN yarn install --production --frozen-lockfile
+RUN yarn install --production
 
 # Expose the desired port
 EXPOSE 3000
