@@ -1,41 +1,39 @@
-# Use an official Node.js runtime as the base image
-FROM node:14 AS builder
+# Base image
+FROM node:14-alpine as builder
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and yarn.lock to the working directory
+# Copy package.json and yarn.lock
 COPY package.json yarn.lock ./
 
 # Install dependencies
-RUN yarn install --frozen-lockfile
+RUN yarn install --frozen-lockfile --no-cache
 
 # Copy the rest of the application code
 COPY . .
 
-# Build the Next.js application
+# Build the application
 RUN yarn build
 
-# Remove development dependencies
-RUN yarn install --production --ignore-scripts --prefer-offline
-
-# Use a lightweight Node.js image for the production build
+# Use a lightweight base image for production
 FROM node:14-alpine
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy the built application from the builder stage
+# Copy built application from the builder stage
+COPY --from=builder /app/package.json /app/yarn.lock ./
 COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/package.json .
-COPY --from=builder /app/yarn.lock .
 
 # Install production dependencies
-RUN yarn install --production --ignore-scripts --prefer-offline
+RUN yarn install --production --frozen-lockfile --no-cache
 
-# Expose the port that your application listens on
+# Expose the desired port
 EXPOSE 3000
 
-# Define the command to start your application
+# Set the environment variable
+ENV NODE_ENV=production
+
+# Start the application
 CMD ["yarn", "start"]
