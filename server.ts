@@ -9,7 +9,7 @@ dotenv({
   path: path.resolve(__dirname, './.env'),
 });
 
-const dev = process.env.NODE_ENV === 'production';
+const dev = process.env.NODE_ENV !== 'production';
 const server = express();
 
 const start = async () => {
